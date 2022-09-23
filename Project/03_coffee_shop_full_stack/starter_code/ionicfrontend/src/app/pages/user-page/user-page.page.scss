@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap');
+ion-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7em;
+}
+
+.full-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}

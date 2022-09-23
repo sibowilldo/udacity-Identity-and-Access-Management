@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title *ngIf="isNew">New Drink Creator</ion-title>
+        <ion-title *ngIf="!isNew">Drink Editor</ion-title>
+        <ion-button
+            slot="end"
+            *ngIf="!isNew"
+            [disabled]="!auth.can('delete:drinks')"
+            (click)="deleteClicked()"
+            fill="clear">
+            <ion-icon name="trash-outline" slot="icon-only" color="red"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="drink">
+    <app-drink-graphic [drink]="drink" class="form-drink"></app-drink-graphic>
+
+    <form (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label>Drink Title</ion-label>
+            <ion-input type="text" [(ngModel)]="drink.title" name="title"></ion-input>
+        </ion-item>
+
+        <ion-item *ngFor="let ingredient of drink.recipe; let i = index;  trackBy: customTrackBy">
+            <ion-label class="mr-2 text-xs font-black">Ingredient</ion-label>
+            <ion-input [(ngModel)]="drink.recipe[i].name" [name]="'Ingredient Title'+i"></ion-input>
+
+            <ion-label class="mr-2 text-xs font-black">Parts</ion-label>
+            <ion-input type="number" [(ngModel)]="drink.recipe[i].parts" [name]="'Ingredient Parts'+i"></ion-input>
+
+            <ion-label class="mx-2 text-xs font-black">Color</ion-label>
+            <div class="input-color-container">
+                <input type="color" [(ngModel)]="drink.recipe[i].color" [name]="'Ingredient Color'+i"
+                           class="input-color" [value]="drink.recipe[i].color"/>
+                <label class="input-color-label" [for]="'Ingredient Color'+i"></label>
+            </div>
+
+            <ion-button (click)="removeIngredient(i)" [disabled]="i==0 && drink.recipe.length==1" fill="clear"><ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon></ion-button>
+            <br/>
+            <ion-button (click)="addIngredient(i)" [disabled]="drink.recipe.length==5" fill="clear"><ion-icon slot="icon-only" name="add-circle-outline"></ion-icon></ion-button>
+            <br/>
+
+        </ion-item>
+
+
+        <br/>
+        <ion-button (click)="closeModal()">Cancel</ion-button>
+        <ion-button
+            [disabled]="!auth.can('patch:drinks') || !auth.can('post:drinks')"
+            (click)="saveClicked()">Save
+        </ion-button>
+    </form>
+</ion-content>

@@ -4,7 +4,7 @@
 
 ### Installing Dependencies
 
-#### Python 3.7
+#### Python 3.8
 
 Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
 
@@ -32,56 +32,20 @@ This will install all of the required packages we selected within the `requireme
 
 ## Running the server
 
-From within the `./src` directory first ensure you are working using your created virtual environment.
-
-Each time you open a new terminal session, run:
+From within the `/backend` directory first ensure you are working using your created virtual environment, by running
 
 ```bash
-export FLASK_APP=api.py;
+source venv/bin/activate
 ```
+
+Rename `.env.example` to `.env`
+```bash
+cp .env.example .env
+```
+The necessary configuration for running the Flask App should already be set, `FLASK_APP=src/api.py` and `FLASK_DEBUG=True`
 
 To run the server, execute:
 
 ```bash
-flask run --reload
+flask run
 ```
-
-The `--reload` flag will detect file changes and restart the server automatically.
-
-## Tasks
-
-### Setup Auth0
-
-1. Create a new Auth0 Account
-2. Select a unique tenant domain
-3. Create a new, single page web application
-4. Create a new API
-   - in API Settings:
-     - Enable RBAC
-     - Enable Add Permissions in the Access Token
-5. Create new API permissions:
-   - `get:drinks`
-   - `get:drinks-detail`
-   - `post:drinks`
-   - `patch:drinks`
-   - `delete:drinks`
-6. Create new roles for:
-   - Barista
-     - can `get:drinks-detail`
-     - can `get:drinks`
-   - Manager
-     - can perform all actions
-7. Test your endpoints with [Postman](https://getpostman.com).
-   - Register 2 users - assign the Barista role to one and Manager role to the other.
-   - Sign into each account and make note of the JWT.
-   - Import the postman collection `./starter_code/backend/udacity-fsnd-udaspicelatte.postman_collection.json`
-   - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
-   - Run the collection and correct any errors.
-   - Export the collection overwriting the one we've included so that we have your proper JWTs during review!
-
-### Implement The Server
-
-There are `@TODO` comments throughout the `./backend/src`. We recommend tackling the files in order and from top to bottom:
-
-1. `./src/auth/auth.py`
-2. `./src/api.py`
