@@ -107,7 +107,7 @@ def post_new_drink(payload):
         drink.insert()
         return jsonify({
             "success": True,
-            "drinks": list(drink.long())
+            "drinks": drink.long()
         }), 200
     except Forbidden or Unauthorized or BadRequest:
         raise AuthError

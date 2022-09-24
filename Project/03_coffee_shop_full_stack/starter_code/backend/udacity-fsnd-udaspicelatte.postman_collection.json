@@ -266,6 +266,9 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -281,7 +284,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 5,\n    \"title\": \"Grape Juice\",\n    \"recipe\": [\n        {\n            \"name\": \"grape\",\n            \"color\": \"grape\",\n            \"parts\": 1\n        }\n    ]\n}",
+							"raw": "{\n    \"title\": \"Cuppacino\",\n    \"recipe\": [{\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -368,7 +371,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjF3MXZZa2pZNHdkNXREdWR0aGtFUyJ9.eyJpc3MiOiJodHRwczovL3VkYXV0aC51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMyOGQxYjVlMTVlYmE5NDNiNWI5Yzk2IiwiYXVkIjoiY29mZmVlLnVkYWNpdHkiLCJpYXQiOjE2NjM5NzUxODEsImV4cCI6MTY2NDA2MTU4MSwiYXpwIjoiMUk4c2FRNWl5RFNUOFJXb0tCYzE2VXMxeVRObVBWVVoiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCJdfQ.iwauDbNSZN-udziMgiFskQ9a-6FU48Tfn0VhaA3bNZsZJVd_AnJhVKncxaDbvYJdcgfC6fprwQ2H3ixX3aQnFldwZAObh5Uy7wrllMVkWNQBASEDROfOGi3Dm8bhd4u-Fd_-fw_KaJFaQmx6UCJzSnGUKe6911Fabe_dXHqCOWbwX0ABFAEC8MUoUIVKfO0-_uHpdBinTFjk54aEtZD7Qhb-RivIC8BpGPmq5x34GeVUhoH0gEz4RhfX3Buof8UHo2AGsygrxy2Ammb34srsCsux53KQ9DMQT0eIK7nVC8Ju2hy_LfzK5hZfEyJMKAmgYXFo5zIQ8icrDwwGkdfpfw",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjF3MXZZa2pZNHdkNXREdWR0aGtFUyJ9.eyJpc3MiOiJodHRwczovL3VkYXV0aC51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjMyOGQxYjVlMTVlYmE5NDNiNWI5Yzk2IiwiYXVkIjoiY29mZmVlLnVkYWNpdHkiLCJpYXQiOjE2NjQwMzM4ODUsImV4cCI6MTY2NDEyMDI4NSwiYXpwIjoiMUk4c2FRNWl5RFNUOFJXb0tCYzE2VXMxeVRObVBWVVoiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCJdfQ.oUvpeY36jbaqwlvBGBdJGumPoa-hhndDqTjS_VdnqpplFukmiWPedw-kxrmS07D8Z3vt5k-9xxfBDemI289LpeUbZ8-Rzeu5OD3xGB8-Qwdf5g-eqkq8KmsNOWjOHmZsibj_xCh5pxvdTEJoszcitKlUwQWWteAaHHtBLMnb9zX-0F7Y5A0vVHc2JRCN-xsWA5c5XzjuhS9te2I87roLT8S_ZY2lFjiWI2bi5qcgThUeTq5xW0b_YwuOUweeLsd53ZsTQIDdkFsJNQOjKCKvck7VWr0iXqb2mDUb5s4uk1TmirkXwwLc62BOD7_5owB4zZKJAQjqYhzlQx4lsFfezw",
 						"type": "string"
 					}
 				]
@@ -494,7 +497,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Water3\",\n    \"recipe\": {\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }\n}"
+							"raw": "{\n    \"title\": \"Water 7\",\n    \"recipe\": [{\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }]\n}"
 						},
 						"url": {
 							"raw": "{{host}}/drinks",
@@ -574,13 +577,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "{{host}}/drinks/7",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"drinks",
-								"1"
+								"7"
 							]
 						}
 					},
