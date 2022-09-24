@@ -18,18 +18,18 @@
 
     <form (ngSubmit)="logForm()">
         <ion-item>
-            <ion-label>Drink Title</ion-label>
+            <label class="mr-2 text-xs font-black font-bold uppercase text-gray-500">Drink Title</label>
             <ion-input type="text" [(ngModel)]="drink.title" name="title"></ion-input>
         </ion-item>
 
         <ion-item *ngFor="let ingredient of drink.recipe; let i = index;  trackBy: customTrackBy">
-            <ion-label class="mr-2 text-xs font-black">Ingredient</ion-label>
+            <label class="mr-2 text-xs font-black font-bold uppercase text-gray-500">Ingredient</label>
             <ion-input [(ngModel)]="drink.recipe[i].name" [name]="'Ingredient Title'+i"></ion-input>
 
-            <ion-label class="mr-2 text-xs font-black">Parts</ion-label>
+            <label class="mr-2 text-xs font-black font-bold uppercase text-gray-500">Parts</label>
             <ion-input type="number" [(ngModel)]="drink.recipe[i].parts" [name]="'Ingredient Parts'+i"></ion-input>
 
-            <ion-label class="mx-2 text-xs font-black">Color</ion-label>
+            <label class="mx-2 text-xs font-black font-bold uppercase text-gray-500">Color</label>
             <div class="input-color-container">
                 <input type="color" [(ngModel)]="drink.recipe[i].color" [name]="'Ingredient Color'+i"
                            class="input-color" [value]="drink.recipe[i].color"/>

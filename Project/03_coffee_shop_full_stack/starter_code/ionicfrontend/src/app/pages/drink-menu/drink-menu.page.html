@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content *ngIf="drinks && drinks.items">
-  <div class="max-w-2xl container mx-auto grid justify-items-stretch items-stretch grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+  <div class="max-w-2xl container mx-auto grid justify-items-stretch items-stretch grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
     <ion-card
-      class="items-center flex flex-col cursor-pointer"
+      class="items-center flex flex-col cursor-pointer justify-between bg-gray-100 dark:bg-gray-900"
       *ngFor="let drink of Object.keys(drinks.items)"
       (click)="openForm(drinks.items[drink])">
       <ion-card-header>
-        <ion-card-title>{{drinks.items[drink].title}}</ion-card-title>
+        <ion-card-title class="text-sm font-bold font-mono text-center">{{drinks.items[drink].title}}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
