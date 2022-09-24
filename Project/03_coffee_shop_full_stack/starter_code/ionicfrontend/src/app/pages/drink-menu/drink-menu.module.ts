@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { DrinkMenuPageRoutingModule } from './drink-menu-routing.module';
 
 import { DrinkMenuPage } from './drink-menu.page';
-import { DrinkFormComponent } from "./drink-form/drink-form.component";
-import { DrinkGraphicComponent } from "./drink-graphic/drink-graphic.component";
+import { DrinkFormComponent } from './drink-form/drink-form.component';
+import { DrinkGraphicComponent } from './drink-graphic/drink-graphic.component';
 
 
 @NgModule({
